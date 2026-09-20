@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدى الطفولة | مشاهدة أفضل مسلسلات وأفلام الكرتون القديمة والحديثة</title>
+    <meta name="description" content="موقع صدى الطفولة لمشاهدة أرشيف ذكريات الطفولة وأجمل مسلسلات الكرتون والأنمي المدبلج بجودة عالية.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+        :root { --primary: #00d2ff; --bg: #0f141e; --card-bg: #1a2233; --text: #ffffff; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; align-items: center; }
+        
+        header { width: 100%; padding: 10px 15px; background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        header h1 { font-size: 1.1rem; cursor: pointer; }
+
+        .header-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+        .nav-btn { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); color: #fff; padding: 5px 10px; border-radius: 20px; font-family: 'Cairo', sans-serif; font-size: 0.75rem; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
+        .nav-btn:hover { background: rgba(255, 255, 255, 0.35); }
+        .nav-btn.active { background: #fff; color: #000; border-color: #fff; }
+
+        .search-box { position: relative; display: flex; align-items: center; }
+        .search-box input { padding: 5px 10px 5px 30px; border-radius: 20px; border: none; outline: none; font-family: 'Cairo', sans-serif; font-size: 0.8rem; width: 120px; transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
+        .search-box input:focus { width: 150px; background: #fff; }
+        .search-icon { position: absolute; left: 10px; color: #3a7bd5; font-size: 0.9rem; pointer-events: none; }
+
+        .container { width: 98%; max-width: 1200px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 5px; }
+        @media (max-width: 480px) { .container { grid-template-columns: repeat(3, 1fr); } }
+        
+        .show-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; display: flex; flex-direction: column; height: 190px; transition: 0.3s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .show-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        .image-box { width: 100%; height: 110px; background: #111; overflow: hidden; flex-shrink: 0; }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .info { padding: 6px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .info h2 { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; color: white; }
+        .btn { background: var(--primary); color: #000; padding: 3px 0; border-radius: 5px; font-size: 0.65rem; font-weight: bold; width: 100%; display: block; }
+
+        /* تنسيق أزرار التنقل في الأسفل */
+        .pagination-footer { display: flex; justify-content: center; gap: 8px; margin: 15px 0; }
+        .page-btn { background: var(--card-bg); border: 1px solid var(--primary); color: var(--text); padding: 6px 14px; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: bold; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .page-btn:hover, .page-btn.active { background: var(--primary); color: #000; }
+
+        footer { margin: 10px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
+        footer p { margin-bottom: 5px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>صدى الطفولة</h1>
+    <div class="header-controls">
+        <a href="#" class="nav-btn active">📺 الكرتون</a>
+        <a href="https://husamalu637.github.io/Aflam/" class="nav-btn">🎬 الأفلام</a>
+
+        <div class="search-box" id="searchWrapper">
+            <input type="text" id="searchInput" placeholder="بحث...">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+</header>
+
+<div class="container" id="animeContainer">
+    <!-- البطاقة 1: سانشيرو -->
+    <a href="https://husamalu637.github.io/Sanshro/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2JItWCyku4F2l04h5KkyJMhKrDJiD_dnpjxJeMsQGeg&s=10" alt="سانشيرو"></div>
+        <div class="info"><h2>سانشيرو</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 2: سوسان -->
+    <a href="https://husamalu637.github.io/Sosan/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlT9Mli3gaCL-Vqx7WrYVvRjVGhuTbBhBdsPzfoXwwkw&s=10" alt="سوسان"></div>
+        <div class="info"><h2>سوسان</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 3: إيكوسان -->
+    <a href="https://husamalu637.github.io/Ekosan/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/410_cover_alt.webp" alt="إيكوسان"></div>
+        <div class="info"><h2>إيكوسان</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 4: مازنجر -->
+    <a href="https://husamalu637.github.io/Maznjr/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9r0deZv4OxMHQC-L_vDYAgWAA9ZPH9UioEm1ZqvznE7zXzjq8nxtvgvk&s=10" alt="مازنجر"></div>
+        <div class="info"><h2>مازنجر</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 5: زينة ونحول -->
+    <a href="https://husamalu637.github.io/Zena-/" class="show-card">
+        <div class="image-box"><img src="https://images.justwatch.com/poster/333916412/s332/season-2.jpg" alt="زينة ونحول"></div>
+        <div class="info"><h2>زينة ونحول</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 6: فلة والأقزام السبعة -->
+    <a href="https://husamalu637.github.io/Fla/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/1021_cover.webp" alt="فلة والأقزام السبعة"></div>
+        <div class="info"><h2>فلة والأقزام السبعة</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 7: مغامرات جاكي شان -->
+    <a href="https://husamalu637.github.io/Jakeshan/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/809_cover.webp" alt="مغامرات جاكي شان"></div>
+        <div class="info"><h2>مغامرات جاكي شان</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 8: الهداف -->
+    <a href="https://husamalu637.github.io/Alhdaf/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/213_cover.webp" alt="الهداف"></div>
+        <div class="info"><h2>الهداف</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 9: مغامرات حنين -->
+    <a href="https://husamalu637.github.io/Hanen/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/7c47f9e0-9627-42b2-9018-9c80049d9495_cover.webp" alt="مغامرات حنين"></div>
+        <div class="info"><h2>مغامرات حنين</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 10: سلاحف النينجا -->
+    <a href="https://husamalu637.github.io/Nenja/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/0a024844-9ab0-41b1-8849-085bb67df8ad_cover.webp" alt="سلاحف النينجا"></div>
+        <div class="info"><h2>سلاحف النينجا</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 11: البطل الخماسي -->
+    <a href="https://husamalu637.github.io/Kmase/" class="show-card">
+        <div class="image-box"><img src="https://cartoony.net/assets/img/posters/112_cover.webp" alt="البطل الخماسي"></div>
+        <div class="info"><h2>البطل الخماسي</h2><span class="btn">دخول</span></div>
+    </a>
+
+    <!-- البطاقة 12: جونكر -->
+    <a href="https://husamalu637.github.io/gonkr/" class="show-card">
+        <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSx1zyY8hqx3f650w5Okrsj4yqNBIwNCloeZ16E1p-QmczAzBacaHIyU&s=10" alt="جونكر"></div>
+        <div class="info"><h2>جونكر</h2><span class="btn">دخول</span></div>
+    </a>
+</div>
+
+<!-- زرين (1) و (2) في أسفل الموقع -->
+<div class="pagination-footer">
+    <a href="#" class="page-btn active">1</a>
+    <a href="#" class="page-btn">2</a>
+</div>
+
+<footer>
+    <p>موقع صدى الطفولة - منصتك الأولى لمشاهدة أرشيف ذكريات الطفولة ومسلسلات الكرتون والأنمي.</p>
+    <p>جميع الحقوق محفوظة</p>
+</footer>
+
+<!-- كود JavaScript لتفعيل البحث الفوري -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.show-card');
+
+    searchInput.addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase().trim();
+
+        cards.forEach(card => {
+            const title = card.querySelector('h2').textContent.toLowerCase();
+            if (title.includes(term)) {
+                card.style.display = 'flex'; // إظهار البطاقة إذا تطابقت
+            } else {
+                card.style.display = 'none'; // إخفاء البطاقة إذا لم تتطابق
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
