@@ -44,6 +44,7 @@
         .page-btn:hover { background: rgba(0, 210, 255, 0.2); }
         .page-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 12px var(--primary); }
 
+        .ad-slot { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; min-height: 250px; margin: 6px 0; overflow: hidden; }
         .ad-bottom { margin: 15px 0; text-align: center; width: 100%; min-height: 50px; }
 
         footer { margin: 10px 0 15px; padding: 15px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid #333; width: 90%; }
@@ -126,6 +127,14 @@
         <div class="info"><h2>سلاحف النينجا</h2><span class="btn">دخول</span></div>
     </a>
 
+    <!-- مساحة إعلان داخل الشبكة -->
+    <div class="ad-slot">
+        <script>
+          atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+        </script>
+        <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
+    </div>
+
     <!-- البطاقة 11: البطل الخماسي -->
     <a href="https://husamalu637.github.io/Kmase/" class="show-card">
         <div class="image-box"><img src="https://cartoony.net/assets/img/posters/112_cover.webp" alt="البطل الخماسي"></div>
@@ -185,6 +194,14 @@
         <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmOorGTUIyfrfu6uXaIuMMtNiGmkMho7Ea0kM5oQ7omQ&s=10" alt="ناروتو"></div>
         <div class="info"><h2>ناروتو</h2><span class="btn">دخول</span></div>
     </a>
+
+    <!-- مساحة إعلان داخل الشبكة -->
+    <div class="ad-slot">
+        <script>
+          atOptions = { 'key' : 'b8ba5b25ff25e41ea44c2df3a1b05378', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+        </script>
+        <script src="https://www.highperformanceformat.com/b8ba5b25ff25e41ea44c2df3a1b05378/invoke.js"></script>
+    </div>
 
     <!-- البطاقة 21: بيل و سبيستيان -->
     <a href="https://husamalu637.github.io/Pel-ad-spestan/" class="show-card">
@@ -258,9 +275,11 @@
 <script>
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.show-card');
+    const adSlots = document.querySelectorAll('.ad-slot');
 
     searchInput.addEventListener('input', function(e) {
         const term = e.target.value.toLowerCase().trim();
+        adSlots.forEach(ad => { ad.style.display = term ? 'none' : 'flex'; }); // إخفاء الإعلانات أثناء البحث
 
         cards.forEach(card => {
             const title = card.querySelector('h2').textContent.toLowerCase();
@@ -272,6 +291,9 @@
         });
     });
 </script>
+
+<!-- سكربت الإعلان المنبثق (Popunder) -->
+<script src="https://pl29266276.profitableratecpmnetwork.com/37/9c/25/379c25c3dc70386924751e11786f4647.js"></script>
 
 </body>
 </html>
