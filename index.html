@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+        input { -webkit-user-select: text; user-select: text; }
         :root { --primary: #00d2ff; --bg: #0f141e; --card-bg: #1a2233; --text: #ffffff; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; align-items: center; }
         
@@ -292,8 +293,27 @@
     });
 </script>
 
-<!-- سكربت الإعلان المنبثق (Popunder) -->
-<script src="https://pl29266276.profitableratecpmnetwork.com/37/9c/25/379c25c3dc70386924751e11786f4647.js"></script>
+<!-- إعلان Direct Link عند الضغط على أي بطاقة -->
+<script>
+    const AD_LINK = 'https://www.profitableratecpmnetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a';
+    // أقل فترة بالثواني بين إعلان وآخر. 0 = إعلان عند كل ضغطة على بطاقة.
+    const AD_INTERVAL_SECONDS = 120;
+
+    document.getElementById('animeContainer').addEventListener('click', function(e) {
+        const card = e.target.closest('.show-card');
+        if (!card || !AD_LINK) return;
+
+        let last = 0;
+        try { last = parseInt(localStorage.getItem('lastAdTime') || '0', 10); } catch (err) {}
+        const now = Date.now();
+        if (now - last < AD_INTERVAL_SECONDS * 1000) return;
+
+        e.preventDefault();
+        try { localStorage.setItem('lastAdTime', String(now)); } catch (err) {}
+        window.open(AD_LINK, '_blank');      // يفتح الإعلان في تبويب جديد
+        window.location.href = card.href;    // وتنتقل الصفحة الحالية إلى الكرتون
+    });
+</script>
 
 </body>
 </html>
